@@ -2255,7 +2255,9 @@ public class Char {
 			case mp:
 			case mmp:
 			case face:
+			    stats.put(charStat, value);
 			case hair:
+			    stats.put(charStat, value); 
 			case pop:
 			case charismaEXP:
 			case insightEXP:
