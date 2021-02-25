@@ -719,6 +719,27 @@ public class AdminCommands {
         }
     }
 
+    @Command(names = {"hair", "sethair"}, requiredType=ADMIN)
+    public static class Hair extends AdminCommand {
+        public static void execute(Char chr, String[] args) {
+                log.info(String.format("setting hair to %d", Integer.parseInt(args[1])));
+
+                chr.setStatAndSendPacket(Stat.hair, Integer.parseInt(args[1]));
+                //cs.setHair(Integer.parseInt(args[1]));
+
+                //chr.getClient().write(WvsContext.statChanged(stats));
+
+        }
+    }
+
+    @Command(names = {"face", "setface"}, requiredType=ADMIN)
+    public static class Face extends AdminCommand {
+        public static void execute(Char chr, String[] args) {
+            log.info("setting face");
+            chr.setStatAndSendPacket(Stat.face, Integer.parseInt(args[1]));
+        }
+    }
+
     @Command(names = {"sp", "setsp"}, requiredType = TESTER)
     public static class Sp extends AdminCommand {
         public static void execute(Char chr, String[] args) {
